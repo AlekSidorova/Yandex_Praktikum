@@ -1,26 +1,35 @@
-video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+.page__video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
-.overlay::before {
-  content: '';
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
-  position: absolute;
-  inset: 0;
-  z-index: 0;
+.page {
+    display: flex;
+    position: relative;
 }
 
-.title {
-  position: absolute;
-  inset: 95px 450px 0;
-  font-weight: 800;
-  font-size: 116px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  text-align: center;
+.page::before {
+    content: '';
+    background-color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+
+.page__title {
+    z-index: 1;
+    max-width: 739px;
+    font-size: 116px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.page__title::after {
+    content: '*';
+    position: relative;
 }
