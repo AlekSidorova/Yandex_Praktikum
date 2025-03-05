@@ -1,14 +1,17 @@
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+  height: 100%;
 }
 
 body {
   margin: 0 auto;
   font-family: Raleway, sans-serif;
-  width: 1600px;
-  background-color: rgb(42, 38, 38);
+  height: 100%;
 }
 
 h1,
@@ -24,8 +27,4 @@ li,
 blockquote {
   margin: 0;
   padding: 0;
-}
-
-img {
-  width: 100%;
 }
