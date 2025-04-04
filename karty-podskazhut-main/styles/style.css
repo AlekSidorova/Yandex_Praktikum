@@ -236,4 +236,13 @@ button:disabled {
 
 } */
 
+.footer {
+  margin-block-start: 10%;
+  border-block-start: 1px solid currentColor;
+  padding: 2.5%;
+  text-align: center;
+}
 
+.footer__copyright {
+  font-size: 18px;
+}
