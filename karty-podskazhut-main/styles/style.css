@@ -1,9 +1,15 @@
 :root {
   --main-font: Raleway;
-  --accent-font: 'STIX Two Text';
-  --bg-color: #F3EFEC;
-  --text-color: #312A4E;
-  --accent-color: #FFAB6B;
+  --accent-font: "STIX Two Text";
+  --bg-color: #f3efec;
+  --text-color: #312a4e;
+  --accent-color: #ffab6b;
+}
+
+.theme_dark {
+  --bg-color: #171717;
+  --text-color: #b3b3b3;
+  --accent-color: transparent;
 }
 
 *,
@@ -13,11 +19,11 @@
 }
 
 .page {
-  min-inline-size: 360px;
   margin: 0;
-  background-color: var(--bg-color, #F3EFEC);
-  color: var(--text-color, #312A4E);
+  color: var(--text-color, #312a4e);
   font-family: var(--main-font, sans-serif);
+  background-color: var(--bg-color, #f3efec);
+  min-inline-size: 360px;
 }
 
 p,
@@ -48,8 +54,8 @@ button:disabled {
 
 .heading {
   font-family: var(--accent-font, serif);
-  line-height: 90%;
   font-weight: 600;
+  line-height: 90%;
   text-align: center;
 }
 
@@ -58,14 +64,14 @@ button:disabled {
 }
 
 .header__title {
+  margin-block-end: 40px;
   padding-block-start: 10%; /* Обратить тут внимание */
-  margin-block-end: 40px; 
   font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
 }
 
 .content__title {
-  font-size: 30px;
   margin: 7% 0 2.5%;
+  font-size: 30px;
 }
 
 .content__text-block {
@@ -81,15 +87,15 @@ button:disabled {
 }
 
 .content__blockquote {
-  inline-size: 75%;
   margin: 0 auto 1.5em;
   font-style: italic;
   line-height: 200%;
+  inline-size: 75%;
 }
 
 .content__list {
-  list-style-type: none;
   padding: 0 0 0 40px;
+  list-style-type: none;
 }
 
 .content__list li {
@@ -97,15 +103,15 @@ button:disabled {
 }
 
 .content__list li::before {
-  content: '';
+  content: "";
   position: absolute;
+  margin-block-start: -7.5px;
+  background-image: url("../images/marker-light.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
   inline-size: 15px;
   block-size: 15px;
-  margin-block-start: -7.5px;
-  background-image: url('../images/marker-light.svg');
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
   inset-block-start: 50%;
   inset-inline-start: -25px;
 }
@@ -114,7 +120,8 @@ button:disabled {
   margin-block-end: 10px;
 }
 
-.content__text-block_type_first-lettered .content__paragraph:first-of-type::first-letter {
+.content__text-block_type_first-lettered
+  .content__paragraph:first-of-type::first-letter {
   display: inline-block;
   margin-inline-end: 1px;
   padding: 0 4px;
@@ -125,16 +132,16 @@ button:disabled {
 
 .content__figure {
   position: relative;
-  inline-size: calc(100% + 10vi);
   margin: 7% auto;
+  inline-size: calc(100% + 10vi);
   inset-inline-end: 5vi;
 }
 
 .content__picture-caption {
   border-block-end: 1px solid currentColor;
-  text-align: center;
   padding: 20px;
   font-size: 18px;
+  text-align: center;
 }
 
 .content__picture {
@@ -161,18 +168,18 @@ button:disabled {
 }
 
 .colored-text::after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
+  background-color: var(--accent-color);
   inline-size: calc(100% + 8px);
   block-size: 0.3em;
-  background-color: var(--accent-color);
   inset-block-end: 0.1em;
   inset-inline-start: -4px;
 }
 
 .content__card-subtitle {
- font-size: 18px;
+  font-size: 18px;
 }
 
 .header__menu {
@@ -186,9 +193,9 @@ button:disabled {
 
 .header__theme-toggler {
   display: flex;
-  list-style-type: none;
-  padding: 0;
   gap: 20px;
+  padding: 0;
+  list-style-type: none;
 }
 
 .header__theme-button {
@@ -212,18 +219,14 @@ button:disabled {
 }
 
 .header__theme-button_is-active::after {
-  content: '';
+  content: "";
   position: absolute;
   z-index: -1;
+  background-color: var(--accent-color);
   inline-size: calc(100% + 8px);
   block-size: 0.3em;
-  background-color: var(--accent-color);
   inset-block-end: 0.1em;
   inset-inline-start: -4px;
-}
-
-.header__theme-button:hover::after {
-  opacity: 1;
 }
 
 /* Темная кнопка 
@@ -245,4 +248,22 @@ button:disabled {
 
 .footer__copyright {
   font-size: 18px;
+}
+
+.theme_dark .colored-text::after {
+  background-image: url("/images/pattern.svg");
+}
+
+.theme_dark .header__theme-button_is-active::after {
+  background-image: url("/images/pattern.svg");
+}
+
+.theme_dark
+  .content__text-block_type_first-lettered
+  .content__paragraph:first-of-type::first-letter {
+  border: 1px solid currentColor;
+}
+
+.theme_dark .content__list li::before {
+  background-image: url("/images/marker-dark.svg");
 }
