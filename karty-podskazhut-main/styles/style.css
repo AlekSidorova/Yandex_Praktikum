@@ -32,6 +32,20 @@ figure {
   margin: 0;
 }
 
+a:focus,
+button:focus {
+  outline: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+button:disabled {
+  pointer-events: none;
+}
+
 .heading {
   font-family: var(--accent-font, serif);
   line-height: 90%;
@@ -160,3 +174,66 @@ figure {
 .content__card-subtitle {
  font-size: 18px;
 }
+
+.header__menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-block-start: 1px solid currentColor;
+  border-block-end: 1px solid currentColor;
+  padding-block: 20px;
+}
+
+.header__theme-toggler {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  gap: 20px;
+}
+
+.header__theme-button {
+  position: relative;
+  border: none;
+  padding: 0;
+  color: currentColor;
+  font-family: inherit;
+  font-size: 18px;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.header__theme-button:hover {
+  text-decoration: underline;
+}
+
+/* Активная кнопка */
+.header__theme-button_is-active {
+  font-weight: 700;
+}
+
+.header__theme-button_is-active::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  inline-size: calc(100% + 8px);
+  block-size: 0.3em;
+  background-color: var(--accent-color);
+  inset-block-end: 0.1em;
+  inset-inline-start: -4px;
+}
+
+.header__theme-button:hover::after {
+  opacity: 1;
+}
+
+/* Темная кнопка 
+.header__theme-button_type_dark {
+
+} */
+
+/* Светлая кнопка 
+.header__theme-button_type_light {
+
+} */
+
+
